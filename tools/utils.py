@@ -30,7 +30,7 @@ def merge_tasks(all_TASK, path):
                 data_all[count] = json.load(f)
     results = []
     for i, task in enumerate(all_TASK):
-        found = False  # 用于标记是否已找到任务
+        found = False 
         for j in reversed(list(data_all.keys())):
             for item in data_all[j]:
                 if item['task'] == task:
@@ -41,4 +41,5 @@ def merge_tasks(all_TASK, path):
             if found:
                 break
     with open(os.path.join(path, "all_results.json"), "w", encoding="utf-8") as f:
+
         json.dump(results, f, ensure_ascii=False, indent=4)
