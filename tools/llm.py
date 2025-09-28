@@ -1,7 +1,5 @@
 import time
 from openai import OpenAI
-from wandb.sdk.lib.apikey import api_key
-
 
 class LLM():
     def __init__(self, model_id, temperature=0, retry_time=1000, failed_sleep_time=1, round_sleep_time=1, type=0) -> None:
